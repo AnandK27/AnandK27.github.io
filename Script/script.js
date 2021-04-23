@@ -129,10 +129,10 @@ function placeAnswers(object){
 
     let graph1 = Desmos.GraphingCalculator(document.getElementById('sendGraph'),{keypad:false , expressionsCollapsed:true});
     let graph2 = Desmos.GraphingCalculator(document.getElementById('recGraph'),{keypad:false, expressionsCollapsed:true});
-    graph1.updateSettings({ xAxisLabel: 'Ps' });
-    graph1.updateSettings({ yAxisLabel: 'Qs' });
-    graph2.updateSettings({ xAxisLabel: 'Pr' });
-    graph2.updateSettings({ yAxisLabel: 'Qr' });
+    graph1.updateSettings({ xAxisLabel: 'Ps (MW)' });
+    graph1.updateSettings({ yAxisLabel: 'Qs (MVar)' });
+    graph2.updateSettings({ xAxisLabel: 'Pr (MW)' });
+    graph2.updateSettings({ yAxisLabel: 'Qr (MVar)' });
     let r = math.abs(object.Vs)*object.Vph/math.abs(object.B);
     r/=Math.pow(10,6);
     graph1.setExpression({ id: "graph1", latex: `(x-${object.Cs[0]/Math.pow(10,6)})^2+(y-${object.Cs[1]/Math.pow(10,6)})^2=${r*r}` });
