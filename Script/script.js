@@ -121,8 +121,8 @@ function placeAnswers(object){
     spanArr[8].innerHTML = object.B
     spanArr[9].innerHTML = object.C
     spanArr[10].innerHTML = object.D
-    spanArr[11].innerHTML = math.abs(object.Vs)/1000
-    spanArr[12].innerHTML = math.abs(object.Is)
+    spanArr[11].innerHTML = math.divide(object.Vs,1000)
+    spanArr[12].innerHTML = object.Is
     spanArr[13].innerHTML = object.perVoltReg*100
     spanArr[14].innerHTML = object.powerLoss/1000000
     spanArr[15].innerHTML = object.transEff
@@ -279,7 +279,7 @@ function mainObject(){
         else if (this.inputs.model == 2){
             this.A = math.add(1, math.multiply(0.5, math.multiply(Ym, Zm)));
             this.B = Zm;
-            this.C = math.multiply(Ym, math.multiply(0.25, math.multiply(Zm, (math.multiply(Ym, Ym)))));
+            this.C = math.add(Ym, math.multiply(0.25, math.multiply(Zm, (math.multiply(Ym, Ym)))));
             this.D = this.A;
         }
         else if (this.inputs.model == 3){
